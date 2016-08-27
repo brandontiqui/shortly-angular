@@ -6,7 +6,7 @@
     <button type="submit" placeholder="Enter your url here">Add</button>
     <ul>
       <li ng-repeat="url in urls track by $index">
-        <a href={{url.data.url}} class="link">
+        <a href={{url.data.baseUrl+"/"+url.data.code}} class="link">
           <img src="assets/redirect_icon.png">
           <span class="title"> {{url.data.title}}</span>
           <span class="original"><br> {{url.data.url}}</span>

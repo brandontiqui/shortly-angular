@@ -1,8 +1,18 @@
 <div id='container'>
   <!-- Your html here -->
-  <form>
+  <form ng-controller="LinksController">
     <input type="text" placeholder="filter">
+    <ul>
+      <li ng-repeat="url in data.links track by $index">
+        <a href={{url.baseUrl+"/"+url.code}} class="link">
+          <img src="assets/redirect_icon.png">
+          <span class="title"> {{url.title}}</span>
+          <span class="original"><br> {{url.url}}</span>
+          <span class="info"><br> {{url.baseUrl + '/' + url.code}}</span>
+          <span class="visits"> {{url.visits}} Visits</span>
+        </a>
+      </li>
+    </ul>
   </form>
-  <div>
-  </div>
+  
 </div>
