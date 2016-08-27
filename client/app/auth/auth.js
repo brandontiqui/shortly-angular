@@ -5,6 +5,7 @@ angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
+  $scope.user.error = '';
 
   $scope.signin = function () {
     if ($scope.validate()) {
@@ -43,6 +44,7 @@ angular.module('shortly.auth', [])
     if (validType && validLength) {
       return true;
     } else {
+      $scope.user.error = 'Enter a valid username and/or password.';
       return false;
     }
   };
