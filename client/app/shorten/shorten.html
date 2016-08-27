@@ -4,6 +4,17 @@
     <input type="url" ng-model="link.url">
     <!-- <input type="url"> -->
     <button type="submit" placeholder="Enter your url here">Add</button>
+    <ul>
+      <li ng-repeat="url in urls track by $index">
+        <a href={{url.data.url}} class="link">
+          <img src="assets/redirect_icon.png">
+          <span class="title"> {{url.data.title}}</span>
+          <span class="original"><br> {{url.data.url}}</span>
+          <span class="info"><br> {{url.data.baseUrl + '/' + url.data.code}}</span>
+          <span class="visits"> {{url.data.visits}} Visits</span>
+        </a>
+      </li>
+    </ul>
   </form>
 </div>
 
