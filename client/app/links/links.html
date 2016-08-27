@@ -1,9 +1,9 @@
 <div id='container'>
   <!-- Your html here -->
   <form ng-controller="LinksController">
-    <input type="text" placeholder="filter">
+    <input ng-model="data.filter" type="text" placeholder="filter">
     <ul>
-      <li ng-repeat="url in data.links track by $index">
+      <li ng-repeat="url in data.links track by $index" ng-if="data.links[$index].url.indexOf(data.filter) !== -1">
         <a href={{url.baseUrl+"/"+url.code}} class="link">
           <img src="assets/redirect_icon.png">
           <span class="title"> {{url.title}}</span>
